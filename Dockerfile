@@ -1,6 +1,10 @@
-FROM python:3.8.5
+FROM python:3.10-slim
 
 WORKDIR /code
+RUN apt-get update -y  \
+    && apt-get autoclean && apt-get autoremove \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache -r requirements.txt
 COPY . .
+CMD gunicorn --config gunicorn.conf.py wsgi:app
