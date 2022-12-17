@@ -4,3 +4,7 @@
 ### Reflects the logic of a real battle in colored html template with text & buttons.
 
 [ancient-fights.ml](http://ancient-fights.ml)
+
+<p align="center">
+<img src="/static/img/fight-screen.jpg" width="50%"/>
+</p>
