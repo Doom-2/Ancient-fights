@@ -6,5 +6,5 @@
 [ancient-fights.ml](http://ancient-fights.ml)
 
 <p align="center">
-<img src="/static/img/fight-screen.jpg" width="50%"/>
+<img src="/static/img/fight-screen.jpg" width="65%"/>
 </p>
