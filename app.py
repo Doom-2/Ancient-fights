@@ -120,7 +120,7 @@ def choose_hero():
         player.equip_weapon(equipment.get_weapon(weapon_name))
         player.equip_armor(equipment.get_armor(armor_name))
         heroes['player'] = player
-        return redirect(url_for('choose_enemy'))
+        return redirect(url_for('choose_enemy'), code=204)
 
 
 @app.route("/choose-enemy/", methods=['post', 'get'])
@@ -154,7 +154,7 @@ def choose_enemy():
         enemy.equip_weapon(equipment.get_weapon(weapon_name))
         enemy.equip_armor(equipment.get_armor(armor_name))
         heroes['enemy'] = enemy
-        return redirect(url_for('start_fight'))
+        return redirect(url_for('start_fight'), code=204)
 
 
 if __name__ == "__main__":

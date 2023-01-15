@@ -9,44 +9,90 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <title>Ancient fights</title>
+    <link href="/static/css/hero_choosing.css" rel="stylesheet">
+    <script src="/static/js/hero_choosing.js"></script>
     <meta charset="UTF-8">
-  </head>
-  <body>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <main style ="width: 320px; margin: 0 auto;">
-      <div class="container">
+</head>
+<body id="body">
+<main style="width: 320px; margin: 0 auto;">
+    <div class="container">
         <h2>{{ result.header }}</h2>
-      <form action="", method="post">
-        <div class="form-group">
-            <input type="text", name="name" class="form-control" placeholder="Unit name">
-          <hr>
-          <select class="custom-select" name="unit_class" required>
-             <option value="">Choose unit class</option>
-              {% for class in result.classes %}
-                  <option value="{{ class }}">{{ class }}</option>
-              {% endfor %}
-           </select>
-          <hr>
-            <select class="custom-select" name="weapon" required>
-             <option value="">Choose a weapon</option>
-              {% for weapon_name in result.weapons %}
-                  <option value="{{ weapon_name }}">{{ weapon_name }}</option>
-              {% endfor %}
-           </select>
-          <hr>
-          <select class="custom-select" name="armor" required>
-             <option value="">Choose an armor</option>
-              {% for armor_name in result.armors %}
-                  <option value="{{ armor_name }}">{{ armor_name }}</option>
-              {% endfor %}
-           </select>
-          <hr>
-          </div>
-        <button class="btn btn-success" type="submit">Confirm</button>
-       </form>
-      </div>
-    </main>
-  </body>
+        {% if result.header == 'Choose a hero' %}
+            <form action="" method="post" id="form-player">
+                <div class="form-group">
+                    <label>
+                        <input type="text" name="name" class="form-control" placeholder="Unit name">
+                    </label>
+                    <hr>
+                    <label>
+                        <select class="custom-select" name="unit_class" required>
+                            <option value="">Choose unit class</option>
+                            {% for class in result.classes %}
+                                <option value="{{ class }}">{{ class }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    <hr>
+                    <label>
+                        <select class="custom-select" name="weapon" required>
+                            <option value="">Choose a weapon</option>
+                            {% for weapon_name in result.weapons %}
+                                <option value="{{ weapon_name }}">{{ weapon_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    <hr>
+                    <label>
+                        <select class="custom-select" name="armor" required>
+                            <option value="">Choose an armor</option>
+                            {% for armor_name in result.armors %}
+                                <option value="{{ armor_name }}">{{ armor_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    <hr>
+                </div>
+                <button class="btn btn-success" type="submit">Confirm</button>
+            </form>
+        {% else %}
+            <form action="" method="post" id="form-enemy">
+                <div class="form-group">
+                    <label>
+                        <input type="text" name="name" class="form-control" placeholder="Unit name">
+                    </label>
+                    <hr>
+                    <label>
+                        <select class="custom-select" name="unit_class" required>
+                            <option value="">Choose unit class</option>
+                            {% for class in result.classes %}
+                                <option value="{{ class }}">{{ class }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    <hr>
+                    <label>
+                        <select class="custom-select" name="weapon" required>
+                            <option value="">Choose a weapon</option>
+                            {% for weapon_name in result.weapons %}
+                                <option value="{{ weapon_name }}">{{ weapon_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    <hr>
+                    <label>
+                        <select class="custom-select" name="armor" required>
+                            <option value="">Choose an armor</option>
+                            {% for armor_name in result.armors %}
+                                <option value="{{ armor_name }}">{{ armor_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    <hr>
+                </div>
+                <button class="btn btn-primary" type="submit">Confirm</button>
+            </form>
+        {% endif %}
+    </div>
+</main>
+</body>
 </html>
