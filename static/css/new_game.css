@@ -1,0 +1,16 @@
+h1 {
+    color: white;
+    text-shadow: red 0 0 7px;
+}
+
+h5 {
+    color: white;
+    text-shadow: red 0 0 2px;
+}
+
+body {
+    background-image: url('/static/img/Index.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
