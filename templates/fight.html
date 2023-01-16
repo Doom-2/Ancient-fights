@@ -11,16 +11,15 @@
     <meta charset="UTF-8">
 </head>
 <body>
-{% set audio_src = '/music/Myth_II_Soulblighter_Willow_Creek(fight_1).mp3' %}
+{% set audio_src = 'music/Myth_II_Soulblighter_Willow_Creek(fight_1).mp3' %}
 {% if 'wins the battle' in result %}
-    {% set audio_src = '/music/Myth_II_Soulblighter_Redemption(win_game).mp3' %}
+    {% set audio_src = 'music/Myth_II_Soulblighter_Redemption(win_game).mp3' %}
     {% set audio_data = 'Win' %}
 {% elif 'lost the battle' in result %}
-    {% set audio_src = '/music/Myth_II_Soulblighter_Gate_Of_Storms(lost_game).mp3' %}
+    {% set audio_src = 'music/Myth_II_Soulblighter_Gate_Of_Storms(lost_game).mp3' %}
     {% set audio_data = 'Lost' %}
 {% endif %}
 <div class="audio_class" id="audio_id">
-    123
     {{ audio_data }}
 </div>
 <audio id="fight-audio" autoplay>

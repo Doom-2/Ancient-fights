@@ -2,7 +2,7 @@ body {
     background-image: url('/static/img/Fight.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: local;
+    background-attachment: fixed;
 }
 
 main {
